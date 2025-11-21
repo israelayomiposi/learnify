@@ -21,7 +21,7 @@ import TopicManagement from "./pages/topicManagement/topicManagement.jsx";
 import TopicEditor from "./pages/topicEditor/topicEditor.jsx";
 import UserManagement from "./pages/userManagement/userManagement.jsx";
 
-import PrivateRoute from "./Components/PrivateRoute.jsx";
+import PrivateRoute from "./Components/privateRoute.jsx";
 
 function App() {
   return (
