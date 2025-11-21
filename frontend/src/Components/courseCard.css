@@ -1,0 +1,14 @@
+.course-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+.course-card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 40px;
+  background-color: red;
+}
+.course-card button :hover{
+  background-attachment: white;
+}

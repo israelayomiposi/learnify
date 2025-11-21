@@ -1,0 +1,130 @@
+/* Full page background like Login/Register */
+.course-detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  z-index: 2;
+}
+
+/* Stunning gradient background for body */
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: linear-gradient(135deg, #6c63ff, #ab6eff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header / Course title */
+.course-detail-container h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.course-detail-container p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.course-detail-container button {
+  padding: 12px 22px;
+  margin: 10px 10px 20px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.course-detail-container button:hover {
+  opacity: 0.9;
+}
+
+.course-detail-container button:first-of-type {
+  background: #6c63ff;
+  color: white;
+  box-shadow: 0 5px 15px rgba(108,99,255,0.4);
+}
+
+.course-detail-container button:last-of-type {
+  background: #eee;
+  color: #333;
+}
+
+/* Topics Grid */
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.topic-card {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.topic-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 12px 30px rgba(0,0,0,0.15);
+}
+
+.topic-card h4 {
+  margin-bottom: 12px;
+  color: #333;
+  font-size: 1.15rem;
+}
+
+/* Read button */
+.read-btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: #6c63ff;
+  color: white;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.read-btn:hover {
+  background: #554fd2;
+  box-shadow: 0 5px 15px rgba(108,99,255,0.4);
+}
+
+/* Progress */
+.course-detail-container p:nth-of-type(2) {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #6c63ff;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .course-detail-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-detail-container button,
+  .read-btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

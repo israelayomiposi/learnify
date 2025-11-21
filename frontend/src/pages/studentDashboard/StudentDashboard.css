@@ -1,0 +1,153 @@
+/* Global container */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #f7f8fc; /* light background for content */
+}
+
+/* ------------------ SIDEBAR ------------------ */
+.sidebar {
+  width: 220px;
+  background: #fff; /* white sidebar */
+  padding: 30px 20px;
+  border-radius: 0 20px 20px 0;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-logo {
+  height: 50px;
+  margin-bottom: 25px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar nav li {
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.sidebar nav li:hover {
+  background: #e6e6ff;
+  color: #6c63ff;
+}
+
+/* ------------------ MAIN CONTENT ------------------ */
+.dashboard-content {
+  flex: 1;
+  padding: 20px 40px;
+  width: calc(100% - 220px);
+  transition: width 0.3s, margin 0.3s;
+}
+
+/* Topbar inside content */
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dashboard-topbar h1 {
+  color: #111827;
+  font-size: 1.8rem;
+}
+
+/* ------------------ COURSE GRID ------------------ */
+.available-courses,
+.enrolled-courses,
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+/* Course card */
+.course-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.course-card h3 {
+  margin: 0 0 10px 0;
+  color: #6c63ff;
+  font-size: 1.2rem;
+}
+
+.course-card p {
+  flex-grow: 1;
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+/* Buttons inside cards */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.actions button {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #6c63ff;
+  color: white;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #554fd2;
+}
+
+button.secondary {
+  background: #eef2ff;
+  color: #6c63ff;
+}
+
+/* Progress bar */
+.progress-bar {
+  background: #e5e7eb;
+  height: 10px;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg,#6c63ff,#ab6eff);
+  width: 0%;
