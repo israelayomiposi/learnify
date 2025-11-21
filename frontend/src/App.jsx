@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // Public Pages
 import Login from "./pages/login/login.jsx";
-import Register from "./pages/register/register.jsx";
+import Register from "./pages/Register/Register.jsx";
+
 import StudentLayout from "./Components/StudentLayout.jsx";
 import CourseList from "./pages/courseList/courseList.jsx";
 import CourseDetail from "./pages/courseDetail/courseDetail.jsx";
