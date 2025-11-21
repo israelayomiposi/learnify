@@ -4,7 +4,7 @@ import API from "../../services/api.js";
 import { saveToken } from "../../utils/auth.js";
 import { SignInButton } from "@clerk/clerk-react";
 import "./login.css";
-import logo from "../../assets/logo.png";
+
 
 function Login() {
   const navigate = useNavigate();
