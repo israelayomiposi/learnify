@@ -1,5 +1,5 @@
 import Enrollment from "../models/Enrollment.js";
-import Topic from "../models/topic.js";
+import Topic from "../models/Topic.js";
 import Progress from "../models/Progress.js";
 import express from "express";
 const router = express.Router();
