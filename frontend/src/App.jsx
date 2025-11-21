@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/login/login.jsx";
 import Register from "./pages/Register/Register.jsx";
 
-import StudentLayout from "./Components/StudentLayout.jsx";
+import StudentLayout from "./Components/studentLayout.jsx";
 import CourseList from "./pages/courseList/courseList.jsx";
 import CourseDetail from "./pages/courseDetail/courseDetail.jsx";
 import CoursePlayer from "./pages/CoursePlayer/courseplayer.jsx";
