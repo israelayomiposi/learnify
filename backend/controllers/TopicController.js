@@ -1,5 +1,5 @@
 import Topic from "../models/Topic.js";
-import Course from "../models/Course.js";
+import Course from "../models/course.js";
 
 export const createTopic = async (req, res) => {
   try {

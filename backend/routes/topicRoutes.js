@@ -4,7 +4,7 @@ import {
   updateTopic,
   getTopicsByCourse,
   getSingleTopic
-} from "../controllers/TopicController.js";
+} from "../controllers/topicController.js";
 
 const router = express.Router();
 

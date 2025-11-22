@@ -1,6 +1,6 @@
 import Enrollment from "../models/Enrollment.js";
 import Progress from "../models/Progress.js";
-import Topic from "../models/topic.js";
+import Topic from "../models/Topic.js";
 
 // Check if the current user is enrolled and get progress
 

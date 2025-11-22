@@ -1,5 +1,5 @@
 import Task from "../models/task.js";
-import Topic from "../models/topic.js";
+import Topic from "../models/Topic.js";
 import Progress from "../models/Progress.js";
 
 // Add a new task to a topic (Admin only)
