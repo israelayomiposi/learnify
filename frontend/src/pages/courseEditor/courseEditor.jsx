@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import API from "../../services/api.js";
-import "./CourseEditor.css";
+import "./courseEditor.css";
 
 function CourseEditor() {
   const { courseId } = useParams();

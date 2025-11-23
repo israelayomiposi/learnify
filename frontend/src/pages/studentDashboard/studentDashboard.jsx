@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../services/api.js";
 import { getCurrentUser } from "../../utils/auth.js";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.PNG";
 import "./StudentDashboard.css";
 
 export default function StudentDashboard() {
