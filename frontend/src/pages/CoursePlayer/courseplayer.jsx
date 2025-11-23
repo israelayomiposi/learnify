@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import API from "../../services/api";
-import "./CoursePlayer.css";
+import "./coursePlayer.css";
 
 export default function CoursePlayer() {
   const { courseId } = useParams();
