@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import API from "../../services/api.js";
 import { getCurrentUser } from "../../utils/auth.js";
-import StudentSidebar from "../../components/StudentSidebar.jsx";
+import StudentSidebar from "../../components/studentSidebar.jsx";
 import { useNavigate } from "react-router-dom";
 import "./studentOverview.css";
-import "../../components/studentSidebar.css";
+
 
 export default function StudentOverview() {
   const [enrollments, setEnrollments] = useState([]);
