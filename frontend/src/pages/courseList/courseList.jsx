@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import "./courseList.css";
+import "./CourseList.css";
 
 export default function CourseList() {
   const [courses, setCourses] = useState([]);

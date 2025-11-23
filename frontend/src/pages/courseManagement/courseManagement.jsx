@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../services/api.js";
-import "./CourseManagement.css";
+import "./courseManagement.css";
 
 function CourseManagement() {
   const [courses, setCourses] = useState([]);
