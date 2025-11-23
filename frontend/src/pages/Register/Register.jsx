@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import API from "../../services/api.js";
 import { saveToken } from "../../utils/auth.js";
 import "./Register.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.PNG";
 
 function Register() {
   const navigate = useNavigate();
