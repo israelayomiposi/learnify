@@ -11,7 +11,7 @@ import CoursePlayer from "./pages/CoursePlayer/courseplayer.jsx";
 import TopicReader from "./pages/CoursePlayer/TopicReader.jsx";
 import StudentDashboard from "./pages/studentDashboard/studentDashboard.jsx";
 import StudentOverview from "./pages/studentOverview/studentOverview.jsx";
-
+import StudentSidebar from "./Components/studentSidebar.jsx";
 
 // Admin Pages
 import AdminDashboard from "./pages/adminDashboard/adminDashboard.jsx";
