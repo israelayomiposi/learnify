@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import API from "../../services/api.js";
 import { saveToken } from "../../utils/auth.js";
 import { SignInButton } from "@clerk/clerk-react";
-import logo from "../../assets/login-logo.PNG";
+import logo from "../../assets/logo.PNG";
 
 import "./login.css";
 
