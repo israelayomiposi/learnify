@@ -4,7 +4,7 @@ import { getCurrentUser } from "../../utils/auth.js";
 import StudentSidebar from "../../components/StudentSidebar.jsx";
 import { useNavigate } from "react-router-dom";
 import "./studentOverview.css";
-import "../../components/StudentSidebar.css";
+import "../../components/studentSidebar.css";
 
 export default function StudentOverview() {
   const [enrollments, setEnrollments] = useState([]);

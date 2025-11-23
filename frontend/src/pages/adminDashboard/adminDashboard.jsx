@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../services/api.js";
-import "./AdminDashboard.css";
+import "./adminDashboard.css";
 
 function AdminDashboard() {
   const [stats, setStats] = useState({ totalUsers: 0, totalCourses: 0 });
