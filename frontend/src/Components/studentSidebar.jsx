@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "./StudentSidebar.css";
+import "./studentSidebar.css";
 
 
 export default function StudentSidebar({ enrolledCount = 0 }) {
