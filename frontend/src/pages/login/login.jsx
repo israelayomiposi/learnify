@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import API from "../../services/api.js";
 import { saveToken } from "../../utils/auth.js";
 import { SignInButton } from "@clerk/clerk-react";
@@ -65,11 +65,11 @@ function Login() {
           <div className="auth-divider">OR</div>
 
           <SignInButton mode="modal">
-            <button className="clerk-btn">Continue with Google</button>
+            <button className="clerk-btn">Continue with gmail</button>
           </SignInButton>
 
           <p style={{ marginTop: "15px" }}>
-            Don't have an account? <a href="/register">Sign up here</a>
+            Don't have an account? <Link to="/register">Sign up here</Link>
           </p>
         </div>
       </div>
