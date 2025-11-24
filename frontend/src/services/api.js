@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API = axios.create({
 <<<<<<< HEAD
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://learnify-8.onrender.com/api",
 });
 
 // Attach JWT token to all requests
