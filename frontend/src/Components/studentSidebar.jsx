@@ -1,26 +1,27 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./studentSidebar.css";
-
+import logo from "../assets/logo.PNG"; // ✅ FIXED — YOU FORGOT THIS
 
 export default function StudentSidebar({ enrolledCount = 0 }) {
   const [isMobile, setIsMobile] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // Detect if mobile
+  // Detect mobile screen
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
       if (window.innerWidth > 768) setMobileOpen(false);
     };
     handleResize();
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <>
-      {/* Hamburger icon only for mobile */}
+      {/* Mobile Hamburger Button */}
       {isMobile && !mobileOpen && (
         <button
           className="mobile-toggle-btn"
@@ -35,7 +36,7 @@ export default function StudentSidebar({ enrolledCount = 0 }) {
           mobileOpen ? "mobile-open" : ""
         }`}
       >
-        {/* Close button only on mobile */}
+        {/* Mobile close button */}
         {isMobile && (
           <button
             className="mobile-close-btn"
@@ -45,11 +46,12 @@ export default function StudentSidebar({ enrolledCount = 0 }) {
           </button>
         )}
 
-        {/* Logo at the top */}
+        {/* Logo */}
         <div className="sidebar-logo-container">
           <img src={logo} alt="Logo" className="sidebar-logo" />
         </div>
 
+        {/* Navigation */}
         <nav className="sidebar-links">
           <NavLink to="/student/dashboard" className="sidebar-link">
             <span className="icon">🏠</span>

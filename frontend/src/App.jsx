@@ -28,46 +28,48 @@ function App() {
     <Router>
       <Routes>
 
-        {/* PUBLIC ROUTES */}
+        {/* ---------- PUBLIC ROUTES ---------- */}
         <Route path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/courses" element={<CourseList />} />
         <Route path="/courses/:courseId" element={<CourseDetail />} />
-        <Route path="/student/overview" element={<StudentOverview />} />
-           <Route path="/student" element={<StudentLayout />}></Route>
 
-        {/* STUDENT ROUTES */}
+        
+        {/* ========== STUDENT ROUTES (with Sidebar) ========== */}
         <Route
-          path="/student/dashboard"
+          path="/student"
           element={
             <PrivateRoute role="student">
-              <StudentDashboard />
+              <StudentLayout />
             </PrivateRoute>
           }
-        />
+        >
+          {/* /student (index) */}
+          <Route index element={<StudentDashboard />} />
 
-        {/* Course Player */}
-        <Route
-          path="/courses/:courseId/player/:topicId"
-          element={
-            <PrivateRoute role="student">
-              <CoursePlayer />
-            </PrivateRoute>
-          }
-        />
+          {/* /student/dashboard */}
+          <Route path="dashboard" element={<StudentDashboard />} />
 
-        {/* Topic Reader */}
-        <Route
-          path="/courses/:courseId/topic/:topicId"
-          element={
-            <PrivateRoute role="student">
-              <TopicReader />
-            </PrivateRoute>
-          }
-        />
+          {/* /student/overview */}
+          <Route path="overview" element={<StudentOverview />} />
 
-        {/* ADMIN ROUTES */}
+          {/* /student/courses/:courseId/player/:topicId */}
+          <Route
+            path="courses/:courseId/player/:topicId"
+            element={<CoursePlayer />}
+          />
+
+          {/* /student/courses/:courseId/topic/:topicId */}
+          <Route
+            path="courses/:courseId/topic/:topicId"
+            element={<TopicReader />}
+          />
+        </Route>
+
+
+
+        {/* ---------- ADMIN ROUTES ---------- */}
         <Route
           path="/admin/dashboard"
           element={

@@ -1,34 +1,21 @@
+/* src/styles/StudentLayout.css */
 .student-layout {
   display: flex;
   min-height: 100vh;
 }
 
-/* Content next to the sidebar */
-.student-content {
-  margin-left: 220px; /* sidebar width on desktop */
-  width: calc(100% - 220px);
-  padding: 20px;
-  transition: margin-left 0.3s, width 0.3s;
+.student-main-content {
+  flex: 1;
+  background: #ffffff;     /* dashboard area white */
+  padding: 30px;
+  margin-left: 220px;      /* same width as sidebar so it doesn't overlap */
+  transition: margin-left 0.3s ease;
 }
 
-/* Mobile adjustments */
+/* Mobile: sidebar slides over; content becomes full width */
 @media (max-width: 768px) {
-  .student-content {
+  .student-main-content {
     margin-left: 0;
-    width: 100%;
-    padding: 15px;
+    padding: 20px;
   }
-}
-.hamburger {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 24px;
-  color: white;
-  background: #111827;
-  border: none;
-  padding: 8px;
-  border-radius: 4px;
-  z-index: 300;
-  cursor: pointer;
 }

@@ -152,3 +152,37 @@
     font-size: 2.5rem;
   }
 }
+.msg-box {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.msg-box.success {
+  background: #d4f8d4;
+  color: #0b7a0b;
+  border: 1px solid #4cd34c;
+}
+
+.msg-box.error {
+  background: #ffe0e0;
+  color: #d10a0a;
+  border: 1px solid #ff4d4d;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.loading-spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #6c63ff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
