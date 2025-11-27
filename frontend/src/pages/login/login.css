@@ -186,3 +186,24 @@ button:disabled {
   display: inline-block;
   vertical-align: middle;
 }
+
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #6c63ff;
+  user-select: none;
+}

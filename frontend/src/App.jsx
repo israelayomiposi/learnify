@@ -11,7 +11,6 @@ import CoursePlayer from "./pages/CoursePlayer/courseplayer.jsx";
 import TopicReader from "./pages/CoursePlayer/TopicReader.jsx";
 import StudentDashboard from "./pages/studentDashboard/studentDashboard.jsx";
 import StudentOverview from "./pages/studentOverview/studentOverview.jsx";
-import StudentSidebar from "./Components/studentSidebar.jsx";
 
 // Admin Pages
 import AdminDashboard from "./pages/adminDashboard/adminDashboard.jsx";
@@ -35,39 +34,32 @@ function App() {
         <Route path="/courses" element={<CourseList />} />
         <Route path="/courses/:courseId" element={<CourseDetail />} />
 
-        
-        {/* ========== STUDENT ROUTES (with Sidebar) ========== */}
+        {/* ---------- STUDENT ROUTES (with Sidebar) ---------- */}
         <Route
-          path="/student"
+  path="/student"
+  element={
+    <PrivateRoute role="student">
+      <StudentLayout />
+    </PrivateRoute>
+  }
+>
+  <Route index element={<StudentDashboard />} />
+  <Route path="dashboard" element={<StudentDashboard />} />
+  <Route path="overview" element={<StudentOverview />} />
+  <Route path="courses/:courseId/player/:topicId" element={<CoursePlayer />} />
+  <Route path="courses/:courseId/topic/:topicId" element={<TopicReader />} />
+</Route>
+
+
+        {/* TopicReader route matches public URL /courses/:courseId/topic/:topicId */}
+        <Route
+          path="/courses/:courseId/topic/:topicId"
           element={
             <PrivateRoute role="student">
-              <StudentLayout />
+              <TopicReader />
             </PrivateRoute>
           }
-        >
-          {/* /student (index) */}
-          <Route index element={<StudentDashboard />} />
-
-          {/* /student/dashboard */}
-          <Route path="dashboard" element={<StudentDashboard />} />
-
-          {/* /student/overview */}
-          <Route path="overview" element={<StudentOverview />} />
-
-          {/* /student/courses/:courseId/player/:topicId */}
-          <Route
-            path="courses/:courseId/player/:topicId"
-            element={<CoursePlayer />}
-          />
-
-          {/* /student/courses/:courseId/topic/:topicId */}
-          <Route
-            path="courses/:courseId/topic/:topicId"
-            element={<TopicReader />}
-          />
-        </Route>
-
-
+        />
 
         {/* ---------- ADMIN ROUTES ---------- */}
         <Route

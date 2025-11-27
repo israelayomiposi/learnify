@@ -41,7 +41,9 @@ app.use("/api/topics", topicRoutes);
 app.use("/api/tasks", taskRoutes);
 
 // Enrollment: /api/courses/:courseId/enroll
+
 app.use("/api/courses", enrollmentRoutes);
+
 
 // Root test route
 app.get("/", (req, res) => {

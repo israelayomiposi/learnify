@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import API from "../../services/api";
+import StudentSidebar from "../../Components/studentSidebar.jsx";
 import "./TopicReader.css";
-
 
 export default function TopicReader() {
   const { courseId, topicId } = useParams();
-
   const [topic, setTopic] = useState(null);
 
   useEffect(() => {
@@ -22,20 +21,34 @@ export default function TopicReader() {
     }
   };
 
-  if (!topic) return <p>Loading...</p>;
+  if (!topic)
+    return (
+      <div className="dashboard-layout">
+        <StudentSidebar />
+        <main className="dashboard-content">
+          <p>Loading...</p>
+        </main>
+      </div>
+    );
 
   return (
-    <div className="topic-reader-container">
-      <h2>{topic.title}</h2>
+    <div className="dashboard-layout">
+      {/* SIDEBAR */}
+      <StudentSidebar />
 
-      {topic.videoUrl && (
-        <video src={topic.videoUrl} width="600" controls />
-      )}
+      {/* CONTENT */}
+      <main className="dashboard-content topic-reader-page">
+        <h1 className="topic-title">{topic.title}</h1>
 
-      <div
-        className="topic-content"
-        dangerouslySetInnerHTML={{ __html: topic.content }}
-      ></div>
+        {topic.videoUrl && (
+          <video className="topic-video" src={topic.videoUrl} controls />
+        )}
+
+        <div
+          className="topic-content"
+          dangerouslySetInnerHTML={{ __html: topic.content }}
+        ></div>
+      </main>
     </div>
   );
 }

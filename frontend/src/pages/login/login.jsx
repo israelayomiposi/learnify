@@ -4,6 +4,7 @@ import API from "../../services/api.js";
 import { saveToken } from "../../utils/auth.js";
 import { SignInButton } from "@clerk/clerk-react";
 import logo from "../../assets/logo.PNG";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 import "./login.css";
 
@@ -15,6 +16,7 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(""); // success / error message
   const [messageType, setMessageType] = useState(""); // "success" or "error"
+  const [showPassword, setShowPassword] = useState(false); // new toggle state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,10 +38,8 @@ function Login() {
 
     } catch (err) {
       console.error(err);
-
       setMessageType("error");
 
-      // backend specific error handling
       if (err.response?.data?.message === "Invalid password") {
         setMessage("Incorrect password");
       } 
@@ -84,13 +84,22 @@ function Login() {
               required
             />
 
-            <input 
-              type="password" 
-              placeholder="Password" 
-              value={password} 
-              onChange={(e) => setPassword(e.target.value)} 
-              required
-            />
+            {/* Password field with toggle */}
+            <div className="password-wrapper">
+              <input 
+                type={showPassword ? "text" : "password"} 
+                placeholder="Password" 
+                value={password} 
+                onChange={(e) => setPassword(e.target.value)} 
+                required
+              />
+              <span
+                className="password-toggle"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </span>
+            </div>
 
             <button type="submit" disabled={loading}>
               {loading ? "Loading..." : "Login"}

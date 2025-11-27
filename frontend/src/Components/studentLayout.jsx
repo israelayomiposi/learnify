@@ -1,14 +1,16 @@
-// src/layouts/StudentLayout.jsx
-import StudentSidebar from "./studentSidebar.jsx";
 import { Outlet } from "react-router-dom";
-import "./studentLayout.css"; // optional: create if you want layout css
+import StudentSidebar from "./studentSidebar.jsx";
+import "./StudentLayout.css";
 
 export default function StudentLayout() {
   return (
     <div className="student-layout">
       <StudentSidebar />
-      <main className="student-main-content">
-        <Outlet />
+
+      <main className="student-main">
+        <div className="student-content-container">
+          <Outlet />
+        </div>
       </main>
     </div>
   );

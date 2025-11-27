@@ -40,3 +40,8 @@ export const admin = (req, res, next) => {
     res.status(403).json({ message: "Admin access only" });
   }
 };
+
+export const authMiddleware = {
+  protect,
+  admin,
+};

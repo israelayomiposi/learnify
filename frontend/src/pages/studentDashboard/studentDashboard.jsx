@@ -49,30 +49,38 @@ export default function StudentDashboard() {
 
   const handleEnroll = async (courseId) => {
     try {
-      await API.post(`/courses/${courseId}/enroll`);
+      // Make sure the correct route is used
+      const res = await API.post(`/courses/${courseId}/enroll`);
+      if (res.data?.message) {
+        alert(res.data.message);
+      } else {
+        alert("Enrolled successfully");
+      }
+
+      // Refresh the enrollments list after enrolling
       await fetchEnrollments();
-      alert("Enrolled successfully");
-    } catch {
-      alert("Failed to enroll.");
+    } catch (err) {
+      console.error(err);
+      if (err.response?.data?.message) {
+        alert(err.response.data.message);
+      } else {
+        alert("Failed to enroll.");
+      }
     }
   };
 
   const handleStartLearning = (course) => {
     if (course.topics?.length > 0) {
       navigate(`/student/courses/${course._id}/player/${course.topics[0]._id}`);
-
     } else {
       alert("No topics yet.");
     }
   };
 
-  // UI STARTS HERE
   return (
     <div className="dashboard-layout">
-      {/* Sidebar */}
       <StudentSidebar />
 
-      {/* MAIN CONTENT */}
       <main className="dashboard-content">
         <header className="dashboard-topbar">
           <h1>Welcome, {currentUser?.name || "Student"}</h1>
@@ -122,7 +130,6 @@ export default function StudentDashboard() {
                       <button onClick={() => handleStartLearning(course)}>
                         Start Learning
                       </button>
-
                       <button onClick={() => navigate(`/courses/${course._id}`)}>
                         Course Page
                       </button>

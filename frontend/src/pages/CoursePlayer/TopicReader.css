@@ -1,7 +1,49 @@
-.topic-reader-container {
-  padding: 40px;
-  background-color: #f9f9f9;
-  border: 10px solid black;
-  text-align: center;
-  border-radius: 20px;
+/* PAGE LAYOUT (same style as dashboard) */
+.topic-reader-page {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+/* Title */
+.topic-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #6c63ff;
+  margin-bottom: 20px;
+}
+
+/* Video Styling */
+.topic-video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Content Styling */
+.topic-content {
+  background: #f8f8ff;
+  padding: 20px;
+  border-radius: 12px;
+  color: #333;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  margin-top: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* For images inside content */
+.topic-content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .topic-video {
+    width: 100%;
+  }
 }
