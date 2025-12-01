@@ -3,8 +3,8 @@ import axios from "axios";
 const API = axios.create({
   baseURL: `${
     import.meta.env.PROD
-      ? import.meta.env.VITE_API_URL   // ✔️ Production backend (Vercel)
-      : "http://localhost:5000"        // ✔️ Local backend (when developing)
+      ? import.meta.env.VITE_API_URL   // Production backend (Vercel)
+      : "http://localhost:5000"        // Local backend (development)
   }/api`,
 });
 
