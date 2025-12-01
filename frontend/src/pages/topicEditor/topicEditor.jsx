@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import ReactQuill from "react-quill-new";
+import "react-quill-new/dist/quill.snow.css";
 import API from "../../services/api";
+import "./TopicEditor.css";
 
 export default function TopicEditor() {
   const { courseId, topicId } = useParams();
@@ -49,21 +52,40 @@ export default function TopicEditor() {
   };
 
   return (
-    <div>
-      <h2>{topicId ? "Edit Topic" : "Add Topic"}</h2>
+    <div className="topic-editor-page">
+      <div className="editor-container">
+        <h2 className="page-title">{topicId ? "Edit Topic" : "Add Topic"}</h2>
 
-      <form onSubmit={handleSubmit}>
-        <label>Title</label>
-        <input value={title} onChange={(e) => setTitle(e.target.value)} />
+        <form onSubmit={handleSubmit} className="editor-form">
+          <label>Title</label>
+          <input 
+            className="input"
+            value={title} 
+            onChange={(e) => setTitle(e.target.value)} 
+            placeholder="Enter topic title"
+          />
 
-        <label>Content</label>
-        <textarea rows={10} value={content} onChange={(e) => setContent(e.target.value)} />
+          <label>Content</label>
+          <ReactQuill 
+            className="rich-editor"
+            value={content} 
+            onChange={setContent}
+            placeholder="Write your topic content here..."
+          />
 
-        <label>Video URL</label>
-        <input value={videoUrl} onChange={(e) => setVideoUrl(e.target.value)} />
+          <label>Video URL</label>
+          <input 
+            className="input"
+            value={videoUrl} 
+            onChange={(e) => setVideoUrl(e.target.value)} 
+            placeholder="https://example.com/video.mp4"
+          />
 
-        <button type="submit">{topicId ? "Update" : "Create"}</button>
-      </form>
+          <button className="save-btn" type="submit">
+            {topicId ? "Update Topic" : "Create Topic"}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

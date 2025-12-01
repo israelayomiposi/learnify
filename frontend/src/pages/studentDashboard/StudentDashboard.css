@@ -1,101 +1,151 @@
-/* ------------------- FULL DASHBOARD LAYOUT ------------------- */
+/* ============================
+   LAYOUT
+=============================== */
 .dashboard-layout {
   display: flex;
-  min-height: 100vh;
-  background: #ffffff;
-  font-family: Inter, sans-serif;
-}
-
-/* ------------------- MAIN CONTENT ------------------- */
-.dashboard-content {
-  flex: 1;
-  background: #ffffff;
-  padding: 30px;
-
-  /* IMPORTANT — push the content to the right of sidebar */
-  margin-left: 220px;
-
-  transition: margin-left 0.3s ease;
-}
-
-/* ------------------- TOP BAR ------------------- */
-.dashboard-topbar {
-  margin-bottom: 25px;
-}
-
-.dashboard-topbar h1 {
-  font-size: 1.8rem;
-  color: #111;
-}
-
-/* ------------------- COURSE GRID ------------------- */
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 18px;
-}
-
-/* ------------------- COURSE CARD ------------------- */
-.course-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  display: flex;
-  flex-direction: column;
-}
-
-.course-card h3 {
-  color: #6c63ff;
-  margin-bottom: 8px;
-  font-size: 1.16rem;
-}
-
-.course-card p {
-  color: #4b5563;
-  flex-grow: 1;
-  margin-bottom: 12px;
-}
-
-/* ------------------- PROGRESS BAR ------------------- */
-.progress-bar {
-  width: 100%;
-  background: #e5e7eb;
-  height: 10px;
-  border-radius: 10px;
+  height: 100vh;
+  background: #f5f7fb;
   overflow: hidden;
 }
 
-.progress {
-  background: #6c63ff;
-  height: 100%;
+.dashboard-content {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
 }
 
-/* ------------------- BUTTONS ------------------- */
+/* ============================
+   TOP BAR
+=============================== */
+.dashboard-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.dashboard-topbar h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* ============================
+   HEADINGS
+=============================== */
+h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ============================
+   COURSE GRID
+=============================== */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 15px;
+}
+
+/* ============================
+   COURSE CARD
+=============================== */
+.course-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.course-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.course-card p {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   BUTTONS
+=============================== */
 .actions {
   display: flex;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .actions button {
   flex: 1;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
   border: none;
-  background: #6c63ff;
-  color: white;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
+  transition: 0.2s;
 }
 
-.actions button:hover {
-  background: #574fe0;
+.actions button:first-child {
+  background: #4f46e5;
+  color: white;
 }
 
-/* ------------------- MOBILE FIX ------------------- */
-@media (max-width: 768px) {
-  .dashboard-content {
-    margin-left: 0; /* since sidebar becomes slide-out */
-    padding: 20px;
-  }
+.actions button:first-child:hover {
+  background: #4338ca;
+}
+
+.actions button:nth-child(2) {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.actions button:nth-child(2):hover {
+  background: #d1d5db;
+}
+
+/* ============================
+   PROGRESS BAR
+=============================== */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress {
+  height: 100%;
+  background: #10b981;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+/* ============================
+   EMPTY STATE
+=============================== */
+.loading,
+.empty-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #6b7280;
 }
